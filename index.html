@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/reboot.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <title>Star Wars RBG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/reboot.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>Star Wars RBG</title>
 </head>
-<body>
-    <main class="container">
-        <header>
-            <h1>The Last Jedi</h1>
-        </header>
-        <div class="row">
-            <div class="col-12">
-                <h5 id="msg">Please pick your character</h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4" id="vsFighter">     
-            </div>
-            <div class="col-4" id="attack">
-            </div>
-            <div class="col-4" id="vsDefender">
-            
-            </div>
-        </div>
-        <div class="row" id="characters_list">
-            <!--function newGame()-->
-        </div>
-    </main>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<body class="flex flex-column h-100">
+  <header class="jumbotron">
+    <h1 class="title">The Last Jedi</h1>
+  </header>
 
-        <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <main class="container">
+
+    <section class="row msgRow">
+      <div class="col-12 text-center">
+        <h2 id="msg"></h2>
+        <button class="btn btn-info againBtn" type="button" style="display: none">PLAY AGAIN!</button>
+      </div>
+    </section>
+
+    <section class="row align-items-center" id="battleRow">
+      <div class="col-4" id="vsFighter">
+        
+      </div>
+      <div class="col-4 text-center" id="attackBtn" style="display: none">
+        <button class="btn btn-secondary attack" type="button">ATTACK!</button>
+      </div>
+      <div class="col-4" id="vsDefender">
+        
+      </div>
+    </section>
+
+    <section class="row infoRow">
+      <div class="col-12">
+        <h2 id="characterBoard"></h2>
+      </div>
+    </section>
+
+    <section class="row" id="charactersRow">
+    <!--function newGame()-->
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 
 
 </body>
+
 </html>

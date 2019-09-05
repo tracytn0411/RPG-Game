@@ -1,0 +1,52 @@
+.jumbotron {
+  background-image: url(/assets/images/Jumbotron1.jpg);
+  background-attachment: fixed;
+  background-position: center top;
+  height: 18rem;
+}
+
+
+@font-face {
+  font-family: Episode1;
+  src: url(/assets/fonts/EPISODE1.TTF)
+}
+
+@font-face {
+  font-family: anakin;
+  src: url(/assets/fonts/anakinmono.ttf)
+}
+
+@font-face {
+  font-family: galaxy;
+  src: url(/assets/fonts/SFDistantGalaxy.ttf)
+}
+
+@font-face {
+  font-family: jedispecial;
+  src: url(/assets/fonts/STJEDISE.TTF)
+}
+.msgRow {
+  margin: 0.5rem;
+  font-family: anakin;
+}
+
+#characterBoard {
+  padding: 1rem 1rem 0;
+  font-family: jedispecial;
+}
+
+.title {
+  margin: 5rem;
+  color: transparent;
+}
+
+.row {
+  padding: 0.5rem;
+}
+.infoRow {
+  padding: 1rem 0.5rem 0.5rem;
+}
+/* .row {
+  padding: 0.5rem 0.5rem 1rem;
+} */
+
