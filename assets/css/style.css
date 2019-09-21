@@ -1,32 +1,35 @@
 .jumbotron {
-  background-image: url(/assets/images/Jumbotron1.jpg);
+  background-image: url(../images/jumbotron1.jpg);
   background-attachment: fixed;
   background-position: center top;
-  height: 18rem;
+  height: 15rem;
 }
 
 
 @font-face {
   font-family: Episode1;
-  src: url(/assets/fonts/EPISODE1.TTF)
+  src: url(../fonts/EPISODE1.TTF)
 }
 
 @font-face {
   font-family: anakin;
-  src: url(/assets/fonts/anakinmono.ttf)
+  src: url(../fonts/anakinmono.ttf)
 }
 
 @font-face {
   font-family: galaxy;
-  src: url(/assets/fonts/SFDistantGalaxy.ttf)
+  src: url(../fonts/SFDistantGalaxy.ttf)
 }
 
 @font-face {
   font-family: jedispecial;
-  src: url(/assets/fonts/STJEDISE.TTF)
+  src: url(../fonts/STJEDISE.TTF)
 }
 .msgRow {
   margin: 0.5rem;
+}
+
+#msg {
   font-family: anakin;
 }
 
@@ -50,3 +53,20 @@
   padding: 0.5rem 0.5rem 1rem;
 } */
 
+/* Characters card style*/
+.card-title {
+  font-family: Episode1;
+  margin-bottom: 1.25rem;
+}
+.card-text {
+  font-family: anakin;
+}
+.card-body {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+/* Animate */
+.flash {
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}

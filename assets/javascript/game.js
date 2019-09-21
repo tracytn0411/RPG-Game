@@ -26,7 +26,7 @@ $(function () {
     {
       nickName: "snoke",
       name: "Snoke",
-      fighterImg: "assets/images/snoke.jpg",
+      fighterImg: "assets/images/snoke.png",
       healthPoints: 300,
       attackPower: 10,
       counterPower: 50,
@@ -44,7 +44,10 @@ $(function () {
 
   var enemyCount; //Check for win
 
-  newGame();
+  //Wait until all html content (include imgages) to fully load
+  $(window).on("load", function(){
+    newGame();
+  });
 
   function newGame() {
     enemyCount = charactersArray.length - 1; //Check for WIN
@@ -77,7 +80,7 @@ $(function () {
     $("#characterBoard").text("Available Characters");
 
     //msg
-    $("#msg").text("Please pick your character");
+    $("#msg").html("<h2 class='animated flash slow'>Please pick your character</h2>");
 
     //Loop thru objects to create profile for each character
     $.each(charactersArray, function () {
@@ -97,7 +100,7 @@ $(function () {
         $("<img>").addClass("card-img-top").attr("src", this.fighterImg),
         $("<div>").addClass("card-body").append([
           $("<h5>").addClass("card-title").text(this.name),
-          $("<p>").addClass("card-text").text("HP: " + this.healthPoints)
+          $("<h5>").addClass("card-text").text("HP: " + this.healthPoints)
         ])
       ])
 
@@ -122,7 +125,7 @@ $(function () {
       fighterProfile = [
         $("<img>").addClass("card-img-top").attr("src", $(this).attr("data_fightimg")),
         $("<div>").addClass("card-body").append([
-          $("<h4>").addClass("card-title").text($(this).attr("data_name")),
+          $("<h5>").addClass("card-title").text($(this).attr("data_name")),
           $("<h5>").addClass("card-text").attr("id", "fighterhealth")
         ])
       ];
@@ -130,7 +133,8 @@ $(function () {
       divCard.append(fighterProfile);
       $("#vsFighter").append(divCard); //Move chosen character to fighter
       $(this).remove(); //Remove chosen fighter old profile 
-      $("#msg").text("Please pick a defender"); //Msg tell user to pick next
+      $("#msg").html("<h2 class='animated flash slow'>Please pick a defender</h2>");//Msg tell user to pick next
+
       $("#characterBoard").text("Available Enemies"); //Update character options board
       updateStats();
 
@@ -146,7 +150,7 @@ $(function () {
       defenderProfile = [
         $("<img>").addClass("card-img-top").attr("src", $(this).attr("data_fightimg")),
         $("<div>").addClass("card-body").append([
-          $("<h4>").addClass("card-title").text($(this).attr("data_name")),
+          $("<h5>").addClass("card-title").text($(this).attr("data_name")),
           $("<h5>").addClass("card-text").attr("id", "defenderhealth")
         ])
       ];
@@ -154,7 +158,8 @@ $(function () {
       divCard.append(defenderProfile);
       $("#vsDefender").append(divCard); //Character becomes defender
       $(this).remove(); //Remove defender old profile
-      $("#msg").text("May the force be with you."); //good luck
+      
+      $("#msg").html("<h2 class='animated fadeIn delay-1s'>May the force be with you</h2>"); //good luck
       $("#attackBtn").show();
       updateStats();
     }
@@ -171,7 +176,7 @@ $(function () {
     $(".againBtn").show();
     $("#battleRow").hide();
     $("#charactersRow").empty();
-    //$("#charactersRow").hide();
+    $("#characterBoard").text("");
   }
 
   //Attack button -- win/lose logic
@@ -193,7 +198,7 @@ $(function () {
     } else if (defenderHP <= 0) { //win
       $("#vsDefender").empty(); //remove 
       defenderProfile = ""; //allow user to pick another defender
-      $("#msg").text("Please pick another defender");
+      $("#msg").html("<h2 class='animated flash slow'>Please pick a defender</h2>");
       //attackButton.hide(); //turn off attack button click function
       $("#attackBtn").hide();
       enemyCount--; //check for WIN
